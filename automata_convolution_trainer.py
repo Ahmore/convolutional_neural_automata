@@ -34,10 +34,10 @@ class AutomataConvolutionTrainer:
             
             loss = loss_fn(predicted_output, known_output)
 
-            loss_history.append(loss.data[0])
+            loss_history.append(loss.data.item())
             progress_percent = iteration // iterations_to_train
             if progress_callback is not None and progress_percent > previous_callback_percent:
-                progress_callback(iteration, progress_percent, loss.data[0])
+                progress_callback(iteration, progress_percent, loss.data.item())
                 previous_callback_percent = progress_percent
 
             optimizer.zero_grad()
