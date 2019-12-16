@@ -1,4 +1,4 @@
-FROM andrewosh/binder-base
+# FROM binder-project/binder:binder/images/base/Dockerfile
 
 USER root
 
